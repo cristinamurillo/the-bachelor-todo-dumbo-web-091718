@@ -53,7 +53,7 @@ end
 def get_average_age_for_season(data, season)
   total = 0 
   data[season].each { |inner_hash|
-    total = total + inner_hash["age"].to_i 
+    total = total + inner_hash["age"].to_f  
   }
   total / data[season].size  
 end
