@@ -31,7 +31,6 @@ def count_contestants_by_hometown(data, hometown)
   counter = 0 
   data.each { |season, values|
     values.each { |inner_hash|
-      binding.pry 
       if inner_hash["hometown"] == hometown 
         counter+=1 
       end
@@ -42,9 +41,18 @@ def count_contestants_by_hometown(data, hometown)
 end
 
 def get_occupation(data, hometown)
-  # code here
-end
+    data.each { |season, values|
+      values.each { |inner_hash|
+        if inner_hash["hometown"] == hometown 
+          return inner_hash["occupation"] #probably not supposed to use return? seems most efficient tho... 
+        end
+      }
+  }
+end  
 
 def get_average_age_for_season(data, season)
-  # code here
+  data[season].each { |inner_hash|
+    inner_hash["age"]
+    
+  }
 end
